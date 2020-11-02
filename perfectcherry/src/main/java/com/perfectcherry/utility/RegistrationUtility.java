@@ -393,7 +393,7 @@ public final class RegistrationUtility {
 		}
 		return PasswordEncoderFactories.createDelegatingPasswordEncoder().encode(rawPassword);
 	}
-	
+
 	public static boolean isPasswordMatching(String rawPassword, String encodedPassword) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Inside isPasswordMatching method");
@@ -438,20 +438,29 @@ public final class RegistrationUtility {
 
 	public static boolean validateResetPasswordDTO(ResetPasswordDTO resetPasswordDTO) {
 		if (logger.isDebugEnabled()) {
-			logger.debug(String.format("Validating resetPassword DTO for userID : %s", resetPasswordDTO.getUserID()));
+			logger.debug(String.format("Validating resetPassword DTO for user : %s", resetPasswordDTO.getUserName()));
 		}
 		StringBuilder sb = new StringBuilder();
 		boolean isValid = true;
-		
-		String oldPassword = resetPasswordDTO.getOldPassword();
-		if (isEmpty(oldPassword)) {
+
+		String userName = resetPasswordDTO.getUserName();
+		if (isEmpty(userName)) {
 			if (sb.length() != 0) {
 				sb.append(", ");
 			}
-			sb.append(RegistrationConstants.USER_OLD_PASSWORD_REQUIRED_MESSAGE);
+			sb.append(RegistrationConstants.USERNAME_REQUIRED_MESSAGE);
 			isValid = false;
 		}
-		
+
+		String defaultPassword = resetPasswordDTO.getDefaultPassword();
+		if (isEmpty(defaultPassword)) {
+			if (sb.length() != 0) {
+				sb.append(", ");
+			}
+			sb.append(RegistrationConstants.USER_DEFAULT_PASSWORD_REQUIRED_MESSAGE);
+			isValid = false;
+		}
+
 		String newPassword = resetPasswordDTO.getNewPassword();
 		if (isEmpty(newPassword)) {
 			if (sb.length() != 0) {
@@ -469,13 +478,14 @@ public final class RegistrationUtility {
 			sb.append(RegistrationConstants.USER_CONFIRM_PASSWORD_REQUIRED_MESSAGE);
 			isValid = false;
 		}
-		if (!isEmpty(newPassword) && !isEmpty(confirmedPassword) && !doesPasswordMatch(newPassword, confirmedPassword)) {
+		if (!isEmpty(newPassword) && !isEmpty(confirmedPassword)
+				&& !doesPasswordMatch(newPassword, confirmedPassword)) {
 			if (sb.length() != 0) {
 				sb.append(", ");
 			}
 			sb.append(RegistrationConstants.USER_PASSWORD_VALIDATION_MESSAGE);
 			isValid = false;
-		}	
+		}
 		if (!isValid) {
 			if (sb.length() != 0) {
 				sb.append(".");

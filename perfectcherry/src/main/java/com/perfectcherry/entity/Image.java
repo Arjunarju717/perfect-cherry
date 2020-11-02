@@ -176,9 +176,9 @@ public class Image implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Images [imageId=" + imageId + ", imageName=" + imageName + ", imageType=" + imageType + ", imageData="
-				+ Arrays.toString(imageData) + ", isProfilePhoto=" + isProfilePhoto + ", userAccount=" + userAccount
-				+ ", createdDate=" + createdDate + ", updatedDate=" + updatedDate + "]";
+		return "Image [imageId=" + imageId + ", imageName=" + imageName + ", imageType=" + imageType + ", imageData="
+				+ Arrays.toString(imageData) + ", isProfilePhoto=" + isProfilePhoto + ", createdDate=" + createdDate
+				+ ", updatedDate=" + updatedDate + "]";
 	}
 
 }

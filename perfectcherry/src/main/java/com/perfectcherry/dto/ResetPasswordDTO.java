@@ -6,30 +6,26 @@ public class ResetPasswordDTO implements Serializable {
 
 	private static final long serialVersionUID = -1320521593384316972L;
 
-	private Long userID;
-
-	private String oldPassword;
-
+	private String userName;
+	private String defaultPassword;
 	private String newPassword;
-
 	private String confirmPassword;
-
 	private String errorMessage;
 
-	public Long getUserID() {
-		return userID;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUserID(Long userID) {
-		this.userID = userID;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
-	public String getOldPassword() {
-		return oldPassword;
+	public String getDefaultPassword() {
+		return defaultPassword;
 	}
 
-	public void setOldPassword(String oldPassword) {
-		this.oldPassword = oldPassword;
+	public void setDefaultPassword(String defaultPassword) {
+		this.defaultPassword = defaultPassword;
 	}
 
 	public String getNewPassword() {
@@ -61,10 +57,10 @@ public class ResetPasswordDTO implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((confirmPassword == null) ? 0 : confirmPassword.hashCode());
+		result = prime * result + ((defaultPassword == null) ? 0 : defaultPassword.hashCode());
 		result = prime * result + ((errorMessage == null) ? 0 : errorMessage.hashCode());
 		result = prime * result + ((newPassword == null) ? 0 : newPassword.hashCode());
-		result = prime * result + ((oldPassword == null) ? 0 : oldPassword.hashCode());
-		result = prime * result + ((userID == null) ? 0 : userID.hashCode());
+		result = prime * result + ((userName == null) ? 0 : userName.hashCode());
 		return result;
 	}
 
@@ -82,6 +78,11 @@ public class ResetPasswordDTO implements Serializable {
 				return false;
 		} else if (!confirmPassword.equals(other.confirmPassword))
 			return false;
+		if (defaultPassword == null) {
+			if (other.defaultPassword != null)
+				return false;
+		} else if (!defaultPassword.equals(other.defaultPassword))
+			return false;
 		if (errorMessage == null) {
 			if (other.errorMessage != null)
 				return false;
@@ -92,23 +93,18 @@ public class ResetPasswordDTO implements Serializable {
 				return false;
 		} else if (!newPassword.equals(other.newPassword))
 			return false;
-		if (oldPassword == null) {
-			if (other.oldPassword != null)
+		if (userName == null) {
+			if (other.userName != null)
 				return false;
-		} else if (!oldPassword.equals(other.oldPassword))
-			return false;
-		if (userID == null) {
-			if (other.userID != null)
-				return false;
-		} else if (!userID.equals(other.userID))
+		} else if (!userName.equals(other.userName))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "ResetPasswordDTO [userID=" + userID + ", oldPassword=" + oldPassword + ", newPassword=" + newPassword
-				+ ", confirmPassword=" + confirmPassword + ", errorMessage=" + errorMessage + "]";
+		return "ResetPasswordDTO [userName=" + userName + ", defaultPassword=" + defaultPassword + ", newPassword="
+				+ newPassword + ", confirmPassword=" + confirmPassword + ", errorMessage=" + errorMessage + "]";
 	}
 
 }

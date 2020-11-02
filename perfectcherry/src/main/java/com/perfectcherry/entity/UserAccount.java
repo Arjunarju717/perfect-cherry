@@ -433,9 +433,9 @@ public class UserAccount implements Serializable {
 				+ emailAddress + ", userName=" + userName + ", aboutMe=" + aboutMe + ", jobTitle=" + jobTitle
 				+ ", company=" + company + ", education=" + education + ", livingIn=" + livingIn + ", latitude="
 				+ latitude + ", longitude=" + longitude + ", gender=" + gender + ", sexualOrientation="
-				+ sexualOrientation + ", dob=" + dob + ", status=" + status + ", image=" + image + ", user=" + user
-				+ ", interestedIn=" + interestedIn + ", peopleWithinKm=" + peopleWithinKm + ", isProfileUpdated="
-				+ isProfileUpdated + ", createdDate=" + createdDate + ", updatedDate=" + updatedDate + "]";
+				+ sexualOrientation + ", dob=" + dob + ", status=" + status + ", interestedIn=" + interestedIn
+				+ ", peopleWithinKm=" + peopleWithinKm + ", isProfileUpdated=" + isProfileUpdated + ", createdDate="
+				+ createdDate + ", updatedDate=" + updatedDate + "]";
 	}
 
 }

@@ -60,7 +60,7 @@ public class User implements Serializable {
 					@JoinColumn(name = "role_id", referencedColumnName = "id") })
 	private List<Role> roles;
 
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user", orphanRemoval=true)
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "user", orphanRemoval = true)
 	private UserAccount userAccount;
 
 	public Long getId() {
@@ -200,7 +200,7 @@ public class User implements Serializable {
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", enabled=" + enabled
 				+ ", accountNonExpired=" + accountNonExpired + ", credentialsNonExpired=" + credentialsNonExpired
-				+ ", accountNonLocked=" + accountNonLocked + ", roles=" + roles + ", userAccount=" + userAccount + "]";
+				+ ", accountNonLocked=" + accountNonLocked + "]";
 	}
 
 }

@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
 			user.setUserAccount(userAccount);
 			userRepository.save(user);
 			if (logger.isDebugEnabled()) {
-				logger.debug("User created successfully : " + user.toString());
+				logger.debug(String.format("User created successfully : %s", user.toString()));
 			}
 			return RegistrationUtility.fillResponseEntity(RegistrationConstants.USER_CREATED_SUCCESSFULLY,
 					HttpStatus.CREATED);
@@ -96,13 +96,13 @@ public class UserServiceImpl implements UserService {
 	@Transactional
 	public ResponseEntity<ResponseDTO> resetUserPassword(ResetPasswordDTO resetPasswordDTO) {
 		if (logger.isDebugEnabled()) {
-			logger.debug(String.format("Inside resetPassword method for userID : %s", resetPasswordDTO.getUserID()));
+			logger.debug(String.format("Inside resetPassword method for user : %s", resetPasswordDTO.getUserName()));
 		}
 		if (RegistrationUtility.validateResetPasswordDTO(resetPasswordDTO)) {
-			Optional<User> userOptional = userRepository.findById(resetPasswordDTO.getUserID());
+			Optional<User> userOptional = userRepository.findUserByName(resetPasswordDTO.getUserName());
 			if (userOptional.isPresent()) {
 				User user = userOptional.get();
-				if (RegistrationUtility.isPasswordMatching(resetPasswordDTO.getOldPassword(), user.getPassword())) {
+				if (RegistrationUtility.isPasswordMatching(resetPasswordDTO.getDefaultPassword(), user.getPassword())) {
 					String newEncryptedPassword = RegistrationUtility
 							.encryptPassword(resetPasswordDTO.getNewPassword());
 					user.setPassword(newEncryptedPassword);
@@ -111,20 +111,20 @@ public class UserServiceImpl implements UserService {
 					pcEmailService.resetPasswordMail(user.getUserAccount().getEmailAddress());
 					if (logger.isDebugEnabled()) {
 						logger.debug(String.format("Password reset was successful for user : %s",
-								resetPasswordDTO.getUserID()));
+								resetPasswordDTO.getUserName()));
 					}
 					return RegistrationUtility.fillResponseEntity(RegistrationConstants.PASSWORD_RESET_SUCCESS_MESSAGE,
 							HttpStatus.OK);
 				} else {
 					if (logger.isDebugEnabled()) {
-						logger.debug(String.format("Old password is incorrect : %s", resetPasswordDTO.getUserID()));
+						logger.debug(String.format("Old password is incorrect : %s", resetPasswordDTO.getUserName()));
 					}
 					return RegistrationUtility.fillResponseEntity(
-							RegistrationConstants.USER_OLD_PASSWORD_INCORRECT_MESSAGE, HttpStatus.BAD_REQUEST);
+							RegistrationConstants.USER_DEFAULT_PASSWORD_INCORRECT_MESSAGE, HttpStatus.BAD_REQUEST);
 				}
 			} else {
 				if (logger.isDebugEnabled()) {
-					logger.debug(String.format("No user found with userID : %s", resetPasswordDTO.getUserID()));
+					logger.debug(String.format("No user found with userName : %s", resetPasswordDTO.getUserName()));
 				}
 				return RegistrationUtility.fillResponseEntity(RegistrationConstants.NO_USER_ID_MESSAGE,
 						HttpStatus.BAD_REQUEST);

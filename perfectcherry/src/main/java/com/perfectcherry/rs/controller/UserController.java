@@ -44,21 +44,20 @@ public class UserController {
 		return userService.deleteUser(userID);
 	}
 
-	@PatchMapping("resetPassword")
-	@PreAuthorize("hasRole('ROLE_USER')")
-	public ResponseEntity<ResponseDTO> resetPassword(@RequestBody ResetPasswordDTO resetPasswordDTO) {
-		if (logger.isDebugEnabled()) {
-			logger.debug(String.format("Resetting password for userID : %s", resetPasswordDTO.getUserID()));
-		}
-		return userService.resetUserPassword(resetPasswordDTO);
-	}
-
 	@PatchMapping("forgotPassword/{userName}")
-	@PreAuthorize("hasRole('ROLE_USER')")
 	public ResponseEntity<ResponseDTO> forgotPassword(@PathVariable String userName) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Inside forgotPassword method");
 		}
 		return userService.forgotUserPassword(userName);
 	}
+
+	@PatchMapping("resetPassword")
+	public ResponseEntity<ResponseDTO> resetPassword(@RequestBody ResetPasswordDTO resetPasswordDTO) {
+		if (logger.isDebugEnabled()) {
+			logger.debug(String.format("Resetting password for user : %s", resetPasswordDTO.getUserName()));
+		}
+		return userService.resetUserPassword(resetPasswordDTO);
+	}
+
 }
