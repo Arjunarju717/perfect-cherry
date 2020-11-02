@@ -10,7 +10,7 @@ public class UIController {
 	@GetMapping("/")
 	public ModelAndView hello() {
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("NewFile");
+		modelAndView.setViewName("index");
 		return modelAndView;
 	}
 
