@@ -1,7 +1,6 @@
 package com.perfectcherry.entity;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -9,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -17,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "image")
-@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler", "user" })
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler", "userAccount" })
 public class Image implements Serializable {
 
 	private static final long serialVersionUID = 5764866028189394732L;
@@ -32,9 +30,8 @@ public class Image implements Serializable {
 	@Column(name = "imagetype")
 	private String imageType;
 
-	@Lob
-	@Column(name = "imagedata")
-	private byte[] imageData;
+	@Column(name = "imageurl")
+	private String imageURL;
 
 	@Column(name = "isprofilephoto")
 	private char isProfilePhoto;
@@ -73,12 +70,12 @@ public class Image implements Serializable {
 		this.imageType = imageType;
 	}
 
-	public byte[] getImageData() {
-		return imageData;
+	public String getImageURL() {
+		return imageURL;
 	}
 
-	public void setImageData(byte[] imageData) {
-		this.imageData = imageData;
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
 	}
 
 	public char getIsProfilePhoto() {
@@ -118,10 +115,10 @@ public class Image implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((createdDate == null) ? 0 : createdDate.hashCode());
-		result = prime * result + Arrays.hashCode(imageData);
 		result = prime * result + ((imageId == null) ? 0 : imageId.hashCode());
 		result = prime * result + ((imageName == null) ? 0 : imageName.hashCode());
 		result = prime * result + ((imageType == null) ? 0 : imageType.hashCode());
+		result = prime * result + ((imageURL == null) ? 0 : imageURL.hashCode());
 		result = prime * result + isProfilePhoto;
 		result = prime * result + ((updatedDate == null) ? 0 : updatedDate.hashCode());
 		result = prime * result + ((userAccount == null) ? 0 : userAccount.hashCode());
@@ -142,8 +139,6 @@ public class Image implements Serializable {
 				return false;
 		} else if (!createdDate.equals(other.createdDate))
 			return false;
-		if (!Arrays.equals(imageData, other.imageData))
-			return false;
 		if (imageId == null) {
 			if (other.imageId != null)
 				return false;
@@ -158,6 +153,11 @@ public class Image implements Serializable {
 			if (other.imageType != null)
 				return false;
 		} else if (!imageType.equals(other.imageType))
+			return false;
+		if (imageURL == null) {
+			if (other.imageURL != null)
+				return false;
+		} else if (!imageURL.equals(other.imageURL))
 			return false;
 		if (isProfilePhoto != other.isProfilePhoto)
 			return false;
@@ -176,9 +176,9 @@ public class Image implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Image [imageId=" + imageId + ", imageName=" + imageName + ", imageType=" + imageType + ", imageData="
-				+ Arrays.toString(imageData) + ", isProfilePhoto=" + isProfilePhoto + ", createdDate=" + createdDate
-				+ ", updatedDate=" + updatedDate + "]";
+		return "Image [imageId=" + imageId + ", imageName=" + imageName + ", imageType=" + imageType + ", imageURL="
+				+ imageURL + ", isProfilePhoto=" + isProfilePhoto + ", createdDate=" + createdDate + ", updatedDate="
+				+ updatedDate + "]";
 	}
 
 }

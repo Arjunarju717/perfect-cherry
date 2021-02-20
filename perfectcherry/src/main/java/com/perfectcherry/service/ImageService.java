@@ -10,13 +10,11 @@ import com.perfectcherry.entity.Image;
 
 public interface ImageService {
 	
-	public void init();
-
 	public List<Image> getImagesByUserId(Long userId);
 
 	public Image getProfilePhotoByUserId(Long userId);
 	
-	public ResponseEntity<ResponseDTO> uploadProfilePhoto(MultipartFile image, Long userID);
+	public ResponseEntity<ResponseDTO> uploadImage(MultipartFile image, Long userID, char isProfilePhoto);
 
 	public List<ResponseEntity<ResponseDTO>> uploadImages(MultipartFile[] image, Long userID);
 

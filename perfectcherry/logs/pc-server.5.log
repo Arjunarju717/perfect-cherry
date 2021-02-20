@@ -1,0 +1,52 @@
+2020-12-26 15:49:33 INFO  The Class-Path manifest attribute in C:\Users\an\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0.1\jaxb-core-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/an/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0.1/jaxb-api.jar
+2020-12-26 15:49:33 INFO  The Class-Path manifest attribute in C:\Users\an\.m2\repository\com\sun\xml\bind\jaxb-impl\2.3.0.1\jaxb-impl-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/an/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0.1/jaxb-core.jar
+2020-12-26 15:49:33 INFO  Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-26 15:49:36 INFO  No active profile set, falling back to default profiles: default
+2020-12-26 15:49:42 INFO  Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-26 15:49:42 INFO  Finished Spring Data repository scanning in 152ms. Found 4 JPA repository interfaces.
+2020-12-26 15:49:42 INFO  BeanFactory id=c273f557-c940-358e-8401-e31bca9e9d33
+2020-12-26 15:49:43 INFO  Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5e7d9af' of type [org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 15:49:43 INFO  Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 15:49:43 INFO  Tomcat initialized with port(s): 8080 (http)
+2020-12-26 15:49:43 INFO  Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-26 15:49:43 INFO  Starting service [Tomcat]
+2020-12-26 15:49:43 INFO  Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-12-26 15:49:44 INFO  Initializing Spring embedded WebApplicationContext
+2020-12-26 15:49:44 INFO  Root WebApplicationContext: initialization completed in 7596 ms
+2020-12-26 15:49:44 INFO  Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-26 15:49:44 INFO  HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-26 15:49:44 INFO  HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-12-26 15:49:44 WARN  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-26 15:49:44 WARN  Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authServerConfigurations': Unsatisfied dependency expressed through field 'passwordEncoder'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfiguration': Unsatisfied dependency expressed through field 'userDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'phoneNumberUtil'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.google.i18n.phonenumbers.PhoneNumberUtil' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-12-26 15:49:44 INFO  Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-26 15:49:44 INFO  HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-26 15:49:44 INFO  HikariPool-1 - Starting...
+2020-12-26 15:49:45 INFO  HikariPool-1 - Start completed.
+2020-12-26 15:49:45 INFO  HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-12-26 15:49:47 INFO  HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-26 15:49:47 INFO  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-26 15:49:47 INFO  Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-26 15:49:47 INFO  HikariPool-1 - Shutdown initiated...
+2020-12-26 15:49:47 INFO  HikariPool-1 - Shutdown completed.
+2020-12-26 15:49:47 INFO  Stopping service [Tomcat]
+2020-12-26 15:49:47 INFO  
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-26 15:49:47 ERROR 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field phoneNumberUtil in com.perfectcherry.serviceimpl.UserServiceImpl required a bean of type 'com.google.i18n.phonenumbers.PhoneNumberUtil' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.google.i18n.phonenumbers.PhoneNumberUtil' in your configuration.
+

@@ -9,15 +9,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AccountStatusUserDetailsChecker;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.google.i18n.phonenumbers.NumberParseException;
 import com.perfectcherry.constant.RegistrationConstants;
 import com.perfectcherry.dto.ResetPasswordDTO;
 import com.perfectcherry.dto.ResponseDTO;
 import com.perfectcherry.dto.UserDTO;
+import com.perfectcherry.entity.AuthUserDetail;
 import com.perfectcherry.entity.User;
 import com.perfectcherry.entity.UserAccount;
+import com.perfectcherry.iauthentication.IAuthenticationFacade;
 import com.perfectcherry.pcenum.UserRole;
 import com.perfectcherry.pcenum.UserStatus;
 import com.perfectcherry.repository.UserRepository;
@@ -27,7 +34,7 @@ import com.perfectcherry.utility.RegistrationUtility;
 
 @Service
 @Transactional(readOnly = true)
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService, UserDetailsService {
 
 	private Logger logger = LogManager.getLogger(UserServiceImpl.class);
 
@@ -36,6 +43,27 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private PCEmailService pcEmailService;
+
+	@Autowired
+	private IAuthenticationFacade iAuthenticationFacade;
+
+	@Override
+	public UserDetails loadUserByUsername(String name) {
+		if (logger.isDebugEnabled()) {
+			logger.debug(String.format("Load user by userName : %s", name));
+		}
+		User user = null;
+		UserDetails userDetails = null;
+		Optional<User> optionalUser = userRepository.findByUsername(name);
+		if (optionalUser.isPresent()) {
+			user = optionalUser.get();
+			userDetails = new AuthUserDetail(user);
+			new AccountStatusUserDetailsChecker().check(userDetails);
+		} else {
+			throw new UsernameNotFoundException(RegistrationConstants.INVALID_CREDENTIALS_MESSAGE);
+		}
+		return userDetails;
+	}
 
 	@Override
 	@Modifying
@@ -73,22 +101,30 @@ public class UserServiceImpl implements UserService {
 		if (logger.isDebugEnabled()) {
 			logger.debug(String.format("Delete user with userID : %s", userID));
 		}
-		Optional<User> userOptional = userRepository.findById(userID);
-		if (userOptional.isPresent()) {
-			User user = userOptional.get();
-			userRepository.delete(user);
-			if (logger.isDebugEnabled()) {
-				logger.debug(String.format("User with userID-%s deleted successfully", userID));
+		userID = getUserID(userID);
+		if (userID > 0) {
+			Optional<User> userOptional = userRepository.findById(userID);
+			if (userOptional.isPresent()) {
+				User user = userOptional.get();
+				userRepository.delete(user);
+				if (logger.isDebugEnabled()) {
+					logger.debug(String.format("User with userID-%s deleted successfully", userID));
+				}
+				return RegistrationUtility.fillResponseEntity(RegistrationConstants.USER_DELETED_SUCCESSFULLY,
+						HttpStatus.OK);
+			} else {
+				if (logger.isDebugEnabled()) {
+					logger.debug(String.format("No user exists with given userID : %s", userID));
+				}
+				return RegistrationUtility.fillResponseEntity(RegistrationConstants.NO_USER_ID_MESSAGE,
+						HttpStatus.BAD_REQUEST);
 			}
-			return RegistrationUtility.fillResponseEntity(RegistrationConstants.USER_DELETED_SUCCESSFULLY,
-					HttpStatus.OK);
-		} else {
-			if (logger.isDebugEnabled()) {
-				logger.debug(String.format("No user exists with given userID : %s", userID));
-			}
-			return RegistrationUtility.fillResponseEntity(RegistrationConstants.NO_USER_ID_MESSAGE,
-					HttpStatus.BAD_REQUEST);
 		}
+		if (logger.isDebugEnabled()) {
+			logger.debug(String.format("Invalid userID : %s", userID));
+		}
+		return RegistrationUtility.fillResponseEntity(RegistrationConstants.INVALID_USER_ID_MESSAGE,
+				HttpStatus.BAD_REQUEST);
 	}
 
 	@Override
@@ -187,7 +223,63 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
-	public UserAccount fillUserAccount(UserDTO userDTO, Long userId) {
+	@Override
+	public ResponseEntity<ResponseDTO> isPhoneRegistered(String region, String phoneNumber) {
+		if (logger.isDebugEnabled()) {
+			logger.debug(String.format("Check if phone: %s number for region: %s is already registered", phoneNumber,
+					region));
+		}
+		try {
+			if (RegistrationUtility.checkPhoneNumber(region, phoneNumber)) {
+				if (userRepository.findByUsername(phoneNumber).isPresent()) {
+					if (logger.isDebugEnabled()) {
+						logger.debug(RegistrationConstants.PHONE_ALREADY_REGISTERED);
+					}
+					return RegistrationUtility.fillResponseEntity(RegistrationConstants.PHONE_ALREADY_REGISTERED,
+							HttpStatus.BAD_REQUEST);
+				}
+				if (logger.isDebugEnabled()) {
+					logger.debug(RegistrationConstants.PHONE_NOT_REGISTERED);
+				}
+				return RegistrationUtility.fillResponseEntity(RegistrationConstants.PHONE_NOT_REGISTERED,
+						HttpStatus.OK);
+			}
+			if (logger.isDebugEnabled()) {
+				logger.debug(RegistrationConstants.PHONE_NOT_VALID_FOR_REGION);
+			}
+			return RegistrationUtility.fillResponseEntity(RegistrationConstants.PHONE_NOT_VALID_FOR_REGION,
+					HttpStatus.BAD_REQUEST);
+		} catch (NumberParseException e) {
+			if (logger.isDebugEnabled()) {
+				logger.debug(String.format(RegistrationConstants.PHONE_VALIDATION_EXCEPTION_MESSAGE, e));
+			}
+			return RegistrationUtility.fillResponseEntity(RegistrationConstants.PHONE_VALIDATION_EXCEPTION_MESSAGE,
+					HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+
+	@Override
+	public User getUserFromToken() {
+		if (logger.isDebugEnabled()) {
+			logger.debug("Get user data from token");
+		}
+		if (iAuthenticationFacade.getAuthentication() != null
+				&& iAuthenticationFacade.getAuthentication().getName() != null) {
+			String userName = iAuthenticationFacade.getAuthentication().getName();
+			if (logger.isDebugEnabled()) {
+				logger.debug(String.format("Fetch userdata for user with phone: %s", userName));
+			}
+			if (userRepository.findByUsername(userName).isPresent()) {
+				return userRepository.findByUsername(userName).get();
+			}
+		}
+		if (logger.isDebugEnabled()) {
+			logger.debug("No user found");
+		}
+		return null;
+	}
+
+	private UserAccount fillUserAccount(UserDTO userDTO, Long userId) {
 		if (logger.isDebugEnabled()) {
 			logger.debug(String.format("Fill user account details for userID : %s", userId));
 		}
@@ -205,7 +297,7 @@ public class UserServiceImpl implements UserService {
 		return userAccount;
 	}
 
-	public boolean isUserRegistered(UserDTO userDTO) {
+	private boolean isUserRegistered(UserDTO userDTO) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Check if user is registered");
 		}
@@ -216,4 +308,15 @@ public class UserServiceImpl implements UserService {
 		}
 		return false;
 	}
+
+	private Long getUserID(Long userID) {
+		if (userID == null) {
+			User user = getUserFromToken();
+			if (user != null) {
+				userID = user.getId();
+			}
+		}
+		return userID;
+	}
+
 }

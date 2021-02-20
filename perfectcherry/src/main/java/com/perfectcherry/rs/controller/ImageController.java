@@ -46,15 +46,17 @@ public class ImageController {
 		return imageService.getProfilePhotoByUserId(userId);
 	}
 
-	@PostMapping("/uploadProfilePhoto/{userID}")
+	@PostMapping("/uploadImage/{userID}/{isProfilePhoto}")
 	@PreAuthorize("hasRole('ROLE_USER')")
-	public ResponseEntity<ResponseDTO> uploadProfilePhoto(@RequestParam("image") MultipartFile image, @PathVariable Long userID) {
-		return imageService.uploadProfilePhoto(image, userID);
+	public ResponseEntity<ResponseDTO> uploadImage(@RequestParam("image") MultipartFile image,
+			@PathVariable Long userID, @PathVariable char isProfilePhoto) {
+		return imageService.uploadImage(image, userID, isProfilePhoto);
 	}
 
 	@PostMapping("/uploadImages/{userID}")
 	@PreAuthorize("hasRole('ROLE_USER')")
-	public List<ResponseEntity<ResponseDTO>> uploadImages(@RequestParam("images") MultipartFile[] images, @PathVariable Long userID) {
+	public List<ResponseEntity<ResponseDTO>> uploadImages(@RequestParam("images") MultipartFile[] images,
+			@PathVariable Long userID) {
 		return imageService.uploadImages(images, userID);
 	}
 

@@ -1,0 +1,587 @@
+2020-12-19 15:22:43 INFO  The Class-Path manifest attribute in C:\Users\an\.m2\repository\com\sun\xml\bind\jaxb-core\2.3.0.1\jaxb-core-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/an/.m2/repository/com/sun/xml/bind/jaxb-core/2.3.0.1/jaxb-api.jar
+2020-12-19 15:22:43 INFO  The Class-Path manifest attribute in C:\Users\an\.m2\repository\com\sun\xml\bind\jaxb-impl\2.3.0.1\jaxb-impl-2.3.0.1.jar referenced one or more files that do not exist: file:/C:/Users/an/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.0.1/jaxb-core.jar
+2020-12-19 15:22:43 INFO  Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-19 15:22:43 INFO  No active profile set, falling back to default profiles: default
+2020-12-19 15:22:45 INFO  Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-19 15:22:46 INFO  Finished Spring Data repository scanning in 82ms. Found 4 JPA repository interfaces.
+2020-12-19 15:22:46 INFO  BeanFactory id=c273f557-c940-358e-8401-e31bca9e9d33
+2020-12-19 15:22:46 INFO  Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7cfddd55' of type [org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-19 15:22:46 INFO  Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-19 15:22:46 INFO  Tomcat initialized with port(s): 8080 (http)
+2020-12-19 15:22:46 INFO  Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-19 15:22:46 INFO  Starting service [Tomcat]
+2020-12-19 15:22:46 INFO  Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-12-19 15:22:46 INFO  Initializing Spring embedded WebApplicationContext
+2020-12-19 15:22:46 INFO  Root WebApplicationContext: initialization completed in 2887 ms
+2020-12-19 15:22:46 INFO  Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-19 15:22:46 INFO  HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-19 15:22:47 WARN  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-19 15:22:47 INFO  HHH000412: Hibernate ORM core version 5.4.17.Final
+2020-12-19 15:22:47 INFO  HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-19 15:22:47 INFO  HikariPool-1 - Starting...
+2020-12-19 15:22:47 INFO  HikariPool-1 - Start completed.
+2020-12-19 15:22:47 INFO  HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-12-19 15:22:47 INFO  Creating filter chain: Ant [pattern='/user/create'], []
+2020-12-19 15:22:47 INFO  Creating filter chain: Ant [pattern='/user/forgotPassword/**'], []
+2020-12-19 15:22:47 INFO  Creating filter chain: Ant [pattern='/user/resetPassword'], []
+2020-12-19 15:22:47 INFO  Creating filter chain: Ant [pattern='/'], []
+2020-12-19 15:22:47 INFO  Creating filter chain: Ant [pattern='/css/**'], []
+2020-12-19 15:22:47 INFO  Creating filter chain: Ant [pattern='/font/**'], []
+2020-12-19 15:22:47 INFO  Creating filter chain: Ant [pattern='/fonts/**'], []
+2020-12-19 15:22:47 INFO  Creating filter chain: Ant [pattern='/img/**'], []
+2020-12-19 15:22:47 INFO  Creating filter chain: Ant [pattern='/js/**'], []
+2020-12-19 15:22:47 INFO  Creating filter chain: Ant [pattern='/shop-cart/**'], []
+2020-12-19 15:22:47 INFO  Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/user/login'], Ant [pattern='/oauth/token_key'], Ant [pattern='/user/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@17cd7be8, org.springframework.security.web.context.SecurityContextPersistenceFilter@146edae6, org.springframework.security.web.header.HeaderWriterFilter@12a27803, org.springframework.security.web.authentication.logout.LogoutFilter@db4e13a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@25863247, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@79aa8e66, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@19f207ef, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5afdfd57, org.springframework.security.web.session.SessionManagementFilter@118f936f, org.springframework.security.web.access.ExceptionTranslationFilter@1eacd2c9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@eee5692]
+2020-12-19 15:22:47 INFO  Creating filter chain: org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfiguration$NotOAuthRequestMatcher@2e21a54d, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b8092b, org.springframework.security.web.context.SecurityContextPersistenceFilter@79b8f663, org.springframework.security.web.header.HeaderWriterFilter@594d8cb9, org.springframework.security.web.authentication.logout.LogoutFilter@645f2fd7, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@5ab09d19, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@eab0f0d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b367225, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47321819, org.springframework.security.web.session.SessionManagementFilter@5a37714d, org.springframework.security.web.access.ExceptionTranslationFilter@65b25adb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6f3003e0]
+2020-12-19 15:22:47 INFO  Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@35f7d59d, org.springframework.security.web.context.SecurityContextPersistenceFilter@30f0b538, org.springframework.security.web.header.HeaderWriterFilter@a527c3c, org.springframework.security.web.csrf.CsrfFilter@56bb6dee, org.springframework.security.web.authentication.logout.LogoutFilter@2e85d0e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3ed9e786, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@2c25c353, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6d6babef, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2c86d19b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@438b1633, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a2121e2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1cff8413, org.springframework.security.web.session.SessionManagementFilter@3da97b7e, org.springframework.security.web.access.ExceptionTranslationFilter@5ce5fda8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@45a3bcf0]
+2020-12-19 15:22:47 INFO  Adding welcome page template: index
+2020-12-19 15:22:48 INFO  HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-19 15:22:48 INFO  Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-19 15:22:48 INFO  LiveReload server is running on port 35729
+2020-12-19 15:22:48 WARN  All Spring Cloud Security modules and starters are deprecated. They will be moved to individual projects in the next major release.
+2020-12-19 15:22:48 INFO  Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-19 15:22:49 INFO  Starting ProtocolHandler ["http-nio-8080"]
+2020-12-19 15:22:49 INFO  Tomcat started on port(s): 8080 (http) with context path ''
+2020-12-19 15:22:49 INFO  Triggering deferred initialization of Spring Data repositories…
+2020-12-19 15:22:49 INFO  Spring Data repositories initialized!
+2020-12-19 15:22:49 INFO  Started PerfectcherryApplication in 7.172 seconds (JVM running for 8.59)
+2020-12-19 22:50:47 INFO  Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-19 22:50:47 INFO  Initializing Servlet 'dispatcherServlet'
+2020-12-19 22:50:47 INFO  Completed initialization in 5 ms
+2020-12-19 22:50:47 DEBUG Inside userAccount method
+2020-12-19 22:50:47 DEBUG Updating user account with details : UserAccountDTO [userId=2022222222, phone=3232788905, emailAddress=Arj@gmail.com, userName=arjunraj, aboutMe=Honest, jobTitle=Software Engineer, company=Quest Global, education=BE, livingIn=Bangalore, latitude=13.401969, longitude=78.055138, gender=Female, sexualOrientation=Straight, dob=Mon Jan 24 11:00:00 IST 2005, interestedIn=Female, peopleWithinKm=100, errorMessage=null]
+2020-12-19 22:50:47 DEBUG Validating user account details : %s
+2020-12-19 22:50:47 DEBUG Inside isEmpty method
+2020-12-19 22:50:47 DEBUG Inside isEmpty method
+2020-12-19 22:50:47 DEBUG Inside isEmpty method
+2020-12-19 22:50:47 DEBUG Inside isNotValidLength method
+2020-12-19 22:50:47 DEBUG Inside isEmpty method
+2020-12-19 22:50:47 DEBUG Inside isEmpty method
+2020-12-19 22:50:47 DEBUG Is emailAddress valid : Arj@gmail.com
+2020-12-19 22:50:47 DEBUG Inside isEmpty method
+2020-12-19 22:50:47 DEBUG Inside isEmpty method
+2020-12-19 22:50:47 DEBUG Inside isEmpty method
+2020-12-19 22:50:47 DEBUG Inside isEmpty method
+2020-12-19 22:50:47 DEBUG Inside isEmpty method
+2020-12-19 22:50:47 DEBUG Is gender valid : Female
+2020-12-19 22:50:47 DEBUG Inside isEmpty method
+2020-12-19 22:50:47 DEBUG Is sexual orientation valid : Straight
+2020-12-19 22:50:47 DEBUG Inside isEmpty method
+2020-12-19 22:50:47 DEBUG Inside validateInterestedIn method
+2020-12-19 22:50:47 DEBUG Is user account details valid : %s
+2020-12-19 22:50:47 DEBUG No active user exists with given user ID : 2022222222
+2020-12-19 22:53:03 DEBUG Inside userAccount method
+2020-12-19 22:53:03 DEBUG Updating user account with details : UserAccountDTO [userId=2022222222, phone=3232788905, emailAddress=Arj@gmail.com, userName=arjunraj, aboutMe=Honest, jobTitle=Software Engineer, company=Quest Global, education=BE, livingIn=Bangalore, latitude=13.401969, longitude=78.055138, gender=Female, sexualOrientation=Straight, dob=Mon Jan 24 11:00:00 IST 2005, interestedIn=Female, peopleWithinKm=100, errorMessage=null]
+2020-12-19 22:53:03 DEBUG Validating user account details : %s
+2020-12-19 22:53:03 DEBUG Inside isEmpty method
+2020-12-19 22:53:03 DEBUG Inside isEmpty method
+2020-12-19 22:53:03 DEBUG Inside isEmpty method
+2020-12-19 22:53:03 DEBUG Inside isNotValidLength method
+2020-12-19 22:53:03 DEBUG Inside isEmpty method
+2020-12-19 22:53:03 DEBUG Inside isEmpty method
+2020-12-19 22:53:03 DEBUG Is emailAddress valid : Arj@gmail.com
+2020-12-19 22:53:03 DEBUG Inside isEmpty method
+2020-12-19 22:53:03 DEBUG Inside isEmpty method
+2020-12-19 22:53:03 DEBUG Inside isEmpty method
+2020-12-19 22:53:03 DEBUG Inside isEmpty method
+2020-12-19 22:53:03 DEBUG Inside isEmpty method
+2020-12-19 22:53:03 DEBUG Is gender valid : Female
+2020-12-19 22:53:03 DEBUG Inside isEmpty method
+2020-12-19 22:53:03 DEBUG Is sexual orientation valid : Straight
+2020-12-19 22:53:03 DEBUG Inside isEmpty method
+2020-12-19 22:53:03 DEBUG Inside validateInterestedIn method
+2020-12-19 22:53:03 DEBUG Is user account details valid : %s
+2020-12-19 22:53:03 INFO  HHH000327: Error performing load command
+org.hibernate.PropertyAccessException: Null value was assigned to a property [class com.perfectcherry.entity.UserAccount.isProfileUpdated] of primitive type setter of com.perfectcherry.entity.UserAccount.isProfileUpdated
+	at org.hibernate.property.access.spi.SetterFieldImpl.set(SetterFieldImpl.java:58) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.tuple.entity.AbstractEntityTuplizer.setPropertyValues(AbstractEntityTuplizer.java:680) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.tuple.entity.PojoEntityTuplizer.setPropertyValues(PojoEntityTuplizer.java:144) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.setPropertyValues(AbstractEntityPersister.java:5119) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:253) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.engine.internal.TwoPhaseLoad.initializeEntity(TwoPhaseLoad.java:163) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.Loader.initializeEntitiesAndCollections(Loader.java:1177) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.Loader.processResultSet(Loader.java:1026) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:962) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:352) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:322) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.Loader.loadEntity(Loader.java:2403) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:74) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.entity.EntityLoader.loadByUniqueKey(EntityLoader.java:148) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.entity.EntityLoader.loadByUniqueKey(EntityLoader.java:144) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.loadByUniqueKey(AbstractEntityPersister.java:2432) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.type.EntityType.loadByUniqueKey(EntityType.java:744) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.type.EntityType.resolve(EntityType.java:467) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:232) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.engine.internal.TwoPhaseLoad.initializeEntity(TwoPhaseLoad.java:163) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.plan.exec.process.internal.AbstractRowReader.performTwoPhaseLoad(AbstractRowReader.java:255) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.plan.exec.process.internal.AbstractRowReader.finishUp(AbstractRowReader.java:215) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:137) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.plan.exec.internal.AbstractLoadPlanBasedLoader.executeLoad(AbstractLoadPlanBasedLoader.java:105) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader.load(AbstractLoadPlanBasedEntityLoader.java:223) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.doLoad(AbstractEntityPersister.java:4415) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:4405) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:569) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:537) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:208) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:332) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:108) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:74) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:113) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1184) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:1173) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl.access$2100(SessionImpl.java:194) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.doLoad(SessionImpl.java:2784) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.lambda$load$1(SessionImpl.java:2765) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.perform(SessionImpl.java:2721) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.load(SessionImpl.java:2765) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:3320) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:3287) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:366) ~[spring-orm-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at com.sun.proxy.$Proxy171.find(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:314) ~[spring-orm-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at com.sun.proxy.$Proxy171.find(Unknown Source) ~[?:?]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById(SimpleJpaRepository.java:281) ~[spring-data-jpa-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.data.repository.core.support.ImplementationInvocationMetadata.invoke(ImplementationInvocationMetadata.java:72) ~[spring-data-commons-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:382) ~[spring-data-commons-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:205) ~[spring-data-commons-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:549) ~[spring-data-commons-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:155) ~[spring-data-commons-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:130) ~[spring-data-commons-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367) ~[spring-tx-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118) ~[spring-tx-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:178) ~[spring-data-jpa-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at com.sun.proxy.$Proxy177.findById(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:205) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at com.sun.proxy.$Proxy116.findById(Unknown Source) ~[?:?]
+	at com.perfectcherry.serviceimpl.UserAccountServiceImpl.saveUser(UserAccountServiceImpl.java:51) ~[classes/:?]
+	at com.perfectcherry.serviceimpl.UserAccountServiceImpl$$FastClassBySpringCGLIB$$5403b8e1.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367) [spring-tx-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118) [spring-tx-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at com.perfectcherry.serviceimpl.UserAccountServiceImpl$$EnhancerBySpringCGLIB$$4c2ddffb.saveUser(<generated>) [classes/:?]
+	at com.perfectcherry.rs.controller.UserAccountController.userAccount(UserAccountController.java:37) [classes/:?]
+	at com.perfectcherry.rs.controller.UserAccountController$$FastClassBySpringCGLIB$$ba61d504.invoke(<generated>) [classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) [spring-core-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:69) [spring-security-core-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at com.perfectcherry.rs.controller.UserAccountController$$EnhancerBySpringCGLIB$$638263dd.userAccount(<generated>) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) [spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) [spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) [spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) [spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:880) [spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(OAuth2AuthenticationProcessingFilter.java:176) [spring-security-oauth2-2.3.4.RELEASE.jar:?]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) [spring-boot-actuator-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at com.perfectcherry.configuration.CorsFilterConfiguration.doFilter(CorsFilterConfiguration.java:46) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: java.lang.IllegalArgumentException: Can not set boolean field com.perfectcherry.entity.UserAccount.isProfileUpdated to null value
+	at jdk.internal.reflect.UnsafeFieldAccessorImpl.throwSetIllegalArgumentException(UnsafeFieldAccessorImpl.java:167) ~[?:?]
+	at jdk.internal.reflect.UnsafeFieldAccessorImpl.throwSetIllegalArgumentException(UnsafeFieldAccessorImpl.java:171) ~[?:?]
+	at jdk.internal.reflect.UnsafeBooleanFieldAccessorImpl.set(UnsafeBooleanFieldAccessorImpl.java:80) ~[?:?]
+	at java.lang.reflect.Field.set(Field.java:780) ~[?:?]
+	at org.hibernate.property.access.spi.SetterFieldImpl.set(SetterFieldImpl.java:52) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	... 198 more
+2020-12-19 22:53:03 WARN  HHH000100: Fail-safe cleanup (collections) : org.hibernate.engine.loading.internal.CollectionLoadContext@77fb0fd<rs=HikariProxyResultSet@518270799 wrapping Result set representing update count of 2>
+2020-12-19 22:53:03 WARN  HHH000160: On CollectionLoadContext#cleanup, localLoadingCollectionKeys contained [2] entries
+2020-12-19 22:53:03 WARN  Resolved [org.springframework.orm.jpa.JpaSystemException: Null value was assigned to a property [class com.perfectcherry.entity.UserAccount.isProfileUpdated] of primitive type setter of com.perfectcherry.entity.UserAccount.isProfileUpdated; nested exception is org.hibernate.PropertyAccessException: Null value was assigned to a property [class com.perfectcherry.entity.UserAccount.isProfileUpdated] of primitive type setter of com.perfectcherry.entity.UserAccount.isProfileUpdated]
+2020-12-19 22:59:28 DEBUG Inside userAccount method
+2020-12-19 22:59:28 DEBUG Updating user account with details : UserAccountDTO [userId=2022222222, phone=3232788905, emailAddress=Arj@gmail.com, userName=arjunraj, aboutMe=Honest, jobTitle=Software Engineer, company=Quest Global, education=BE, livingIn=Bangalore, latitude=13.401969, longitude=78.055138, gender=Female, sexualOrientation=Straight, dob=Mon Jan 24 11:00:00 IST 2005, interestedIn=Female, peopleWithinKm=100, errorMessage=null]
+2020-12-19 22:59:28 DEBUG Validating user account details : %s
+2020-12-19 22:59:28 DEBUG Inside isEmpty method
+2020-12-19 22:59:28 DEBUG Inside isEmpty method
+2020-12-19 22:59:28 DEBUG Inside isEmpty method
+2020-12-19 22:59:28 DEBUG Inside isNotValidLength method
+2020-12-19 22:59:28 DEBUG Inside isEmpty method
+2020-12-19 22:59:28 DEBUG Inside isEmpty method
+2020-12-19 22:59:28 DEBUG Is emailAddress valid : Arj@gmail.com
+2020-12-19 22:59:28 DEBUG Inside isEmpty method
+2020-12-19 22:59:28 DEBUG Inside isEmpty method
+2020-12-19 22:59:28 DEBUG Inside isEmpty method
+2020-12-19 22:59:28 DEBUG Inside isEmpty method
+2020-12-19 22:59:28 DEBUG Inside isEmpty method
+2020-12-19 22:59:28 DEBUG Is gender valid : Female
+2020-12-19 22:59:28 DEBUG Inside isEmpty method
+2020-12-19 22:59:28 DEBUG Is sexual orientation valid : Straight
+2020-12-19 22:59:28 DEBUG Inside isEmpty method
+2020-12-19 22:59:28 DEBUG Inside validateInterestedIn method
+2020-12-19 22:59:28 DEBUG Is user account details valid : %s
+2020-12-19 22:59:28 INFO  HHH000327: Error performing load command
+org.hibernate.PropertyAccessException: Null value was assigned to a property [class com.perfectcherry.entity.UserAccount.status] of primitive type setter of com.perfectcherry.entity.UserAccount.status
+	at org.hibernate.property.access.spi.SetterFieldImpl.set(SetterFieldImpl.java:58) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.tuple.entity.AbstractEntityTuplizer.setPropertyValues(AbstractEntityTuplizer.java:680) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.tuple.entity.PojoEntityTuplizer.setPropertyValues(PojoEntityTuplizer.java:144) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.setPropertyValues(AbstractEntityPersister.java:5119) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:253) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.engine.internal.TwoPhaseLoad.initializeEntity(TwoPhaseLoad.java:163) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.Loader.initializeEntitiesAndCollections(Loader.java:1177) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.Loader.processResultSet(Loader.java:1026) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.Loader.doQuery(Loader.java:962) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:352) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:322) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.Loader.loadEntity(Loader.java:2403) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:74) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.entity.EntityLoader.loadByUniqueKey(EntityLoader.java:148) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.entity.EntityLoader.loadByUniqueKey(EntityLoader.java:144) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.loadByUniqueKey(AbstractEntityPersister.java:2432) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.type.EntityType.loadByUniqueKey(EntityType.java:744) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.type.EntityType.resolve(EntityType.java:467) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.engine.internal.TwoPhaseLoad.doInitializeEntity(TwoPhaseLoad.java:232) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.engine.internal.TwoPhaseLoad.initializeEntity(TwoPhaseLoad.java:163) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.plan.exec.process.internal.AbstractRowReader.performTwoPhaseLoad(AbstractRowReader.java:255) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.plan.exec.process.internal.AbstractRowReader.finishUp(AbstractRowReader.java:215) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.plan.exec.process.internal.ResultSetProcessorImpl.extractResults(ResultSetProcessorImpl.java:137) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.plan.exec.internal.AbstractLoadPlanBasedLoader.executeLoad(AbstractLoadPlanBasedLoader.java:105) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.loader.entity.plan.AbstractLoadPlanBasedEntityLoader.load(AbstractLoadPlanBasedEntityLoader.java:223) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.doLoad(AbstractEntityPersister.java:4415) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:4405) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:569) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:537) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:208) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:332) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.doOnLoad(DefaultLoadEventListener.java:108) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:74) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:113) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl.fireLoadNoChecks(SessionImpl.java:1184) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:1173) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl.access$2100(SessionImpl.java:194) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.doLoad(SessionImpl.java:2784) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.lambda$load$1(SessionImpl.java:2765) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.perform(SessionImpl.java:2721) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.load(SessionImpl.java:2765) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:3320) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at org.hibernate.internal.SessionImpl.find(SessionImpl.java:3287) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:366) ~[spring-orm-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at com.sun.proxy.$Proxy171.find(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:314) ~[spring-orm-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at com.sun.proxy.$Proxy171.find(Unknown Source) ~[?:?]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById(SimpleJpaRepository.java:281) ~[spring-data-jpa-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.data.repository.core.support.ImplementationInvocationMetadata.invoke(ImplementationInvocationMetadata.java:72) ~[spring-data-commons-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:382) ~[spring-data-commons-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:205) ~[spring-data-commons-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:549) ~[spring-data-commons-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:155) ~[spring-data-commons-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:130) ~[spring-data-commons-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367) ~[spring-tx-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118) ~[spring-tx-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:178) ~[spring-data-jpa-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at com.sun.proxy.$Proxy177.findById(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:205) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at com.sun.proxy.$Proxy116.findById(Unknown Source) ~[?:?]
+	at com.perfectcherry.serviceimpl.UserAccountServiceImpl.saveUser(UserAccountServiceImpl.java:51) ~[classes/:?]
+	at com.perfectcherry.serviceimpl.UserAccountServiceImpl$$FastClassBySpringCGLIB$$5403b8e1.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) ~[spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367) [spring-tx-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118) [spring-tx-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at com.perfectcherry.serviceimpl.UserAccountServiceImpl$$EnhancerBySpringCGLIB$$4c2ddffb.saveUser(<generated>) [classes/:?]
+	at com.perfectcherry.rs.controller.UserAccountController.userAccount(UserAccountController.java:37) [classes/:?]
+	at com.perfectcherry.rs.controller.UserAccountController$$FastClassBySpringCGLIB$$ba61d504.invoke(<generated>) [classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) [spring-core-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.security.access.intercept.aopalliance.MethodSecurityInterceptor.invoke(MethodSecurityInterceptor.java:69) [spring-security-core-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691) [spring-aop-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at com.perfectcherry.rs.controller.UserAccountController$$EnhancerBySpringCGLIB$$638263dd.userAccount(<generated>) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) [spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) [spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) [spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) [spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) [spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:880) [spring-webmvc-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(OAuth2AuthenticationProcessingFilter.java:176) [spring-security-oauth2-2.3.4.RELEASE.jar:?]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) [spring-security-web-5.3.3.RELEASE.jar:5.3.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) [spring-boot-actuator-2.3.1.RELEASE.jar:2.3.1.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.2.7.RELEASE.jar:5.2.7.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at com.perfectcherry.configuration.CorsFilterConfiguration.doFilter(CorsFilterConfiguration.java:46) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.36.jar:9.0.36]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+Caused by: java.lang.IllegalArgumentException: Can not set char field com.perfectcherry.entity.UserAccount.status to null value
+	at jdk.internal.reflect.UnsafeFieldAccessorImpl.throwSetIllegalArgumentException(UnsafeFieldAccessorImpl.java:167) ~[?:?]
+	at jdk.internal.reflect.UnsafeFieldAccessorImpl.throwSetIllegalArgumentException(UnsafeFieldAccessorImpl.java:171) ~[?:?]
+	at jdk.internal.reflect.UnsafeCharacterFieldAccessorImpl.set(UnsafeCharacterFieldAccessorImpl.java:80) ~[?:?]
+	at java.lang.reflect.Field.set(Field.java:780) ~[?:?]
+	at org.hibernate.property.access.spi.SetterFieldImpl.set(SetterFieldImpl.java:52) ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]
+	... 198 more
+2020-12-19 22:59:28 WARN  HHH000100: Fail-safe cleanup (collections) : org.hibernate.engine.loading.internal.CollectionLoadContext@430174f3<rs=HikariProxyResultSet@617620142 wrapping Result set representing update count of 2>
+2020-12-19 22:59:28 WARN  HHH000160: On CollectionLoadContext#cleanup, localLoadingCollectionKeys contained [2] entries
+2020-12-19 22:59:28 WARN  Resolved [org.springframework.orm.jpa.JpaSystemException: Null value was assigned to a property [class com.perfectcherry.entity.UserAccount.status] of primitive type setter of com.perfectcherry.entity.UserAccount.status; nested exception is org.hibernate.PropertyAccessException: Null value was assigned to a property [class com.perfectcherry.entity.UserAccount.status] of primitive type setter of com.perfectcherry.entity.UserAccount.status]
+2020-12-19 23:00:28 DEBUG Inside userAccount method
+2020-12-19 23:00:28 DEBUG Updating user account with details : UserAccountDTO [userId=2022222222, phone=3232788905, emailAddress=Arj@gmail.com, userName=arjunraj, aboutMe=Honest, jobTitle=Software Engineer, company=Quest Global, education=BE, livingIn=Bangalore, latitude=13.401969, longitude=78.055138, gender=Female, sexualOrientation=Straight, dob=Mon Jan 24 11:00:00 IST 2005, interestedIn=Female, peopleWithinKm=100, errorMessage=null]
+2020-12-19 23:00:28 DEBUG Validating user account details : %s
+2020-12-19 23:00:28 DEBUG Inside isEmpty method
+2020-12-19 23:00:28 DEBUG Inside isEmpty method
+2020-12-19 23:00:28 DEBUG Inside isEmpty method
+2020-12-19 23:00:28 DEBUG Inside isNotValidLength method
+2020-12-19 23:00:28 DEBUG Inside isEmpty method
+2020-12-19 23:00:28 DEBUG Inside isEmpty method
+2020-12-19 23:00:28 DEBUG Is emailAddress valid : Arj@gmail.com
+2020-12-19 23:00:28 DEBUG Inside isEmpty method
+2020-12-19 23:00:28 DEBUG Inside isEmpty method
+2020-12-19 23:00:28 DEBUG Inside isEmpty method
+2020-12-19 23:00:28 DEBUG Inside isEmpty method
+2020-12-19 23:00:28 DEBUG Inside isEmpty method
+2020-12-19 23:00:28 DEBUG Is gender valid : Female
+2020-12-19 23:00:28 DEBUG Inside isEmpty method
+2020-12-19 23:00:28 DEBUG Is sexual orientation valid : Straight
+2020-12-19 23:00:28 DEBUG Inside isEmpty method
+2020-12-19 23:00:28 DEBUG Inside validateInterestedIn method
+2020-12-19 23:00:28 DEBUG Is user account details valid : %s
+2020-12-19 23:00:28 DEBUG Find modified user accout details
+2020-12-19 23:00:28 DEBUG User updated successfully : UserAccountDTO [userId=2022222222, phone=3232788905, emailAddress=Arj@gmail.com, userName=arjunraj, aboutMe=Honest, jobTitle=Software Engineer, company=Quest Global, education=BE, livingIn=Bangalore, latitude=13.401969, longitude=78.055138, gender=Female, sexualOrientation=Straight, dob=Mon Jan 24 11:00:00 IST 2005, interestedIn=Female, peopleWithinKm=100, errorMessage=null]
+2020-12-19 23:01:13 DEBUG Inside userAccount method
+2020-12-19 23:01:13 DEBUG Updating user account with details : UserAccountDTO [userId=2011111111, phone=3232788905, emailAddress=Arj@gmail.com, userName=arjunraj, aboutMe=Honest, jobTitle=Software Engineer, company=Quest Global, education=BE, livingIn=Bangalore, latitude=13.401969, longitude=78.055138, gender=Female, sexualOrientation=Straight, dob=Mon Jan 24 11:00:00 IST 2005, interestedIn=Female, peopleWithinKm=100, errorMessage=null]
+2020-12-19 23:01:13 DEBUG Validating user account details : %s
+2020-12-19 23:01:13 DEBUG Inside isEmpty method
+2020-12-19 23:01:13 DEBUG Inside isEmpty method
+2020-12-19 23:01:13 DEBUG Inside isEmpty method
+2020-12-19 23:01:13 DEBUG Inside isNotValidLength method
+2020-12-19 23:01:13 DEBUG Inside isEmpty method
+2020-12-19 23:01:13 DEBUG Inside isEmpty method
+2020-12-19 23:01:13 DEBUG Is emailAddress valid : Arj@gmail.com
+2020-12-19 23:01:13 DEBUG Inside isEmpty method
+2020-12-19 23:01:13 DEBUG Inside isEmpty method
+2020-12-19 23:01:13 DEBUG Inside isEmpty method
+2020-12-19 23:01:13 DEBUG Inside isEmpty method
+2020-12-19 23:01:13 DEBUG Inside isEmpty method
+2020-12-19 23:01:13 DEBUG Is gender valid : Female
+2020-12-19 23:01:13 DEBUG Inside isEmpty method
+2020-12-19 23:01:13 DEBUG Is sexual orientation valid : Straight
+2020-12-19 23:01:13 DEBUG Inside isEmpty method
+2020-12-19 23:01:13 DEBUG Inside validateInterestedIn method
+2020-12-19 23:01:13 DEBUG Is user account details valid : %s
+2020-12-19 23:01:13 DEBUG Find modified user accout details
+2020-12-19 23:01:13 DEBUG User updated successfully : UserAccountDTO [userId=2011111111, phone=3232788905, emailAddress=Arj@gmail.com, userName=arjunraj, aboutMe=Honest, jobTitle=Software Engineer, company=Quest Global, education=BE, livingIn=Bangalore, latitude=13.401969, longitude=78.055138, gender=Female, sexualOrientation=Straight, dob=Mon Jan 24 11:00:00 IST 2005, interestedIn=Female, peopleWithinKm=100, errorMessage=null]
+2020-12-20 10:39:48 WARN  HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10h25m52s306ms218µs).
+2020-12-20 15:37:25 WARN  HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h51m36s277ms33µs500ns).
+2020-12-20 20:39:28 WARN  HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h24m59s689ms804µs).
+2020-12-20 21:58:11 WARN  HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=36m41s995ms519µs400ns).
+2020-12-21 10:39:03 WARN  HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9h36m59s706ms174µs500ns).

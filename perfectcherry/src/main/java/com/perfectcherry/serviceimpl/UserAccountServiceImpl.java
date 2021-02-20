@@ -25,6 +25,7 @@ import com.perfectcherry.pcenum.UserStatus;
 import com.perfectcherry.repository.UserAccountRepository;
 import com.perfectcherry.repository.UserRepository;
 import com.perfectcherry.service.UserAccountService;
+import com.perfectcherry.service.UserService;
 import com.perfectcherry.utility.RegistrationUtility;
 
 @Service
@@ -38,6 +39,9 @@ public class UserAccountServiceImpl implements UserAccountService {
 
 	@Autowired
 	private UserRepository userRepository;
+
+	@Autowired
+	private UserService userService;
 
 	@Override
 	@Modifying
@@ -82,6 +86,7 @@ public class UserAccountServiceImpl implements UserAccountService {
 			logger.debug(String.format("Deactiving user by userID : %s", userID));
 		}
 		Date date = new Date();
+		userID = getUserID(userID);
 		if (userID > 0) {
 			Optional<UserAccount> userAccountOptional = userAccountRepository.getActiveUser(userID);
 			if (userAccountOptional.isPresent()) {
@@ -117,6 +122,7 @@ public class UserAccountServiceImpl implements UserAccountService {
 			logger.debug(String.format("Activating user by userID : %s", userID));
 		}
 		Date date = new Date();
+		userID = getUserID(userID);
 		if (userID > 0) {
 			Optional<UserAccount> userAccountOptional = userAccountRepository.getObsoleteUser(userID);
 			if (userAccountOptional.isPresent()) {
@@ -145,11 +151,12 @@ public class UserAccountServiceImpl implements UserAccountService {
 	}
 
 	@Override
-	public UserAccount getAllUserDataById(Long userId) {
+	public UserAccount getAllUserData(Long userID) {
 		if (logger.isDebugEnabled()) {
-			logger.debug(String.format("Get all user data by userID : %s", userId));
+			logger.debug("Get all user data");
 		}
-		Optional<UserAccount> optionalUser = userAccountRepository.findById(userId);
+		userID = getUserID(userID);
+		Optional<UserAccount> optionalUser = userAccountRepository.findById(userID);
 		if (optionalUser.isPresent()) {
 			return optionalUser.get();
 		}
@@ -157,11 +164,12 @@ public class UserAccountServiceImpl implements UserAccountService {
 	}
 
 	@Override
-	public UserAccount getUserDataById(Long userId) {
+	public UserAccount getUserData(Long userID) {
 		if (logger.isDebugEnabled()) {
-			logger.debug(String.format("Get user data by userID : %s", userId));
+			logger.debug("Get user data by userID");
 		}
-		Optional<UserAccount> optionalUser = userAccountRepository.findById(userId);
+		userID = getUserID(userID);
+		Optional<UserAccount> optionalUser = userAccountRepository.findById(userID);
 		if (optionalUser.isPresent()) {
 			optionalUser.get().setImage(optionalUser.get().getImage().stream()
 					.filter(s -> s.getIsProfilePhoto() == ProfilePhoto.Y.asChar()).collect(Collectors.toList()));
@@ -172,20 +180,34 @@ public class UserAccountServiceImpl implements UserAccountService {
 	}
 
 	@Override
-	public List<UserAccount> findPeopleNearMe(Long userId) {
+	public List<UserAccount> findPeopleNearMe() {
 		if (logger.isDebugEnabled()) {
-			logger.debug(String.format("Find people near me by userID : %s", userId));
+			logger.debug("Find people near me");
 		}
 		List<UserAccount> userAccountList = null;
-		Optional<UserAccount> optionalUser = userAccountRepository.findById(userId);
-		if (optionalUser.isPresent()) {
-			UserAccount userAccount = optionalUser.get();
-			userAccountList = userAccountRepository.findPeopleNearMe(userAccount.getUserAccountId(),
-					userAccount.getLatitude(), userAccount.getLongitude(), userAccount.getPeopleWithinKm());
-			return userAccountList.parallelStream().filter(ua -> ua.getGender().equals(userAccount.getInterestedIn()))
-					.collect(Collectors.toList());
+		User user = userService.getUserFromToken();
+		if (user != null) {
+			Optional<UserAccount> optionalUser = userAccountRepository.findById(user.getId());
+			if (optionalUser.isPresent()) {
+				UserAccount userAccount = optionalUser.get();
+				userAccountList = userAccountRepository.findPeopleNearMe(userAccount.getUserAccountId(),
+						userAccount.getLatitude(), userAccount.getLongitude(), userAccount.getPeopleWithinKm());
+				return userAccountList.parallelStream()
+						.filter(ua -> ua.getGender().equals(userAccount.getInterestedIn()))
+						.collect(Collectors.toList());
+			}
 		}
 		return Collections.<UserAccount>emptyList();
+	}
+
+	private Long getUserID(Long userID) {
+		if (userID == null) {
+			User user = userService.getUserFromToken();
+			if (user != null) {
+				userID = user.getId();
+			}
+		}
+		return userID;
 	}
 
 	private UserAccount fillModifiedUserAccoutDetails(UserAccount userAccount, UserAccountDTO userAccountDTO) {

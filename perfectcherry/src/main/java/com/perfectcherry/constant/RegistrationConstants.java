@@ -112,5 +112,13 @@ public final class RegistrationConstants {
 	public static final String INTEREST_NOT_FOUND = "Interest not found";
 
 	public static final String INVALID_INTEREST_ID_MESSAGE = "Invalid interest ID";
+	
+	public static final String PHONE_ALREADY_REGISTERED = "Phone number is already registered";
+	
+	public static final String PHONE_NOT_REGISTERED = "Phone numer is not yet registered";
+	
+	public static final String PHONE_NOT_VALID_FOR_REGION = "Phone number is in-valid for the given region";
+	
+	public static final String PHONE_VALIDATION_EXCEPTION_MESSAGE = "Exception occurred in while validation phone number, please try again later";
 
 }

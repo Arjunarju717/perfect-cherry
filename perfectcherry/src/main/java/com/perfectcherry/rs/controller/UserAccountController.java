@@ -37,13 +37,31 @@ public class UserAccountController {
 		return userAccountService.saveUser(userAccountDTO);
 	}
 
+	@GetMapping("getAllUserData")
+	@PreAuthorize("hasRole('ROLE_USER')")
+	public UserAccount getAllUserData() {
+		if (logger.isDebugEnabled()) {
+			logger.debug("Inside getAllUserData method");
+		}
+		return userAccountService.getAllUserData(null);
+	}
+
+	@GetMapping("getUserData")
+	@PreAuthorize("hasRole('ROLE_USER')")
+	public UserAccount getUserData() {
+		if (logger.isDebugEnabled()) {
+			logger.debug("Inside getUserData method");
+		}
+		return userAccountService.getUserData(null);
+	}
+	
 	@GetMapping("getAllUserDataById/{userId}")
 	@PreAuthorize("hasRole('ROLE_USER')")
 	public UserAccount getAllUserDataById(@PathVariable Long userId) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Inside getAllUserDataById method");
 		}
-		return userAccountService.getAllUserDataById(userId);
+		return userAccountService.getAllUserData(userId);
 	}
 
 	@GetMapping("getUserDataById/{userId}")
@@ -52,33 +70,51 @@ public class UserAccountController {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Inside getUserDataById method");
 		}
-		return userAccountService.getUserDataById(userId);
+		return userAccountService.getUserData(userId);
 	}
 
-	@GetMapping("findPeopleNearMe/{userId}")
+	@GetMapping("findPeopleNearMe")
 	@PreAuthorize("hasRole('ROLE_USER')")
-	public List<UserAccount> findPeopleNearMe(@PathVariable Long userId) {
+	public List<UserAccount> findPeopleNearMe() {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Inside findPeopleNearMe method");
 		}
-		return userAccountService.findPeopleNearMe(userId);
+		return userAccountService.findPeopleNearMe();
 	}
-
-	@PatchMapping("deactivate/{userID}")
+	
+	@PatchMapping("deactivate")
 	@PreAuthorize("hasRole('ROLE_USER')")
-	public ResponseEntity<ResponseDTO> deactivate(@PathVariable Long userID) {
+	public ResponseEntity<ResponseDTO> deactivate() {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Inside deactivate method");
 		}
-		return userAccountService.deactivateUser(userID);
+		return userAccountService.deactivateUser(null);
 	}
 
-	@PatchMapping("activate/{userID}")
+	@PatchMapping("activate")
 	@PreAuthorize("hasRole('ROLE_USER')")
-	public ResponseEntity<ResponseDTO> activate(@PathVariable Long userID) {
+	public ResponseEntity<ResponseDTO> activate() {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Inside sendInterest method");
 		}
-		return userAccountService.activateUser(userID);
+		return userAccountService.activateUser(null);
+	}
+
+	@PatchMapping("deactivate/{userId}")
+	@PreAuthorize("hasRole('ROLE_USER')")
+	public ResponseEntity<ResponseDTO> deactivate(@PathVariable Long userId) {
+		if (logger.isDebugEnabled()) {
+			logger.debug("Inside deactivate method");
+		}
+		return userAccountService.deactivateUser(userId);
+	}
+
+	@PatchMapping("activate/{userId}")
+	@PreAuthorize("hasRole('ROLE_USER')")
+	public ResponseEntity<ResponseDTO> activate(@PathVariable Long userId) {
+		if (logger.isDebugEnabled()) {
+			logger.debug("Inside sendInterest method");
+		}
+		return userAccountService.activateUser(userId);
 	}
 }

@@ -16,6 +16,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 
+import com.google.i18n.phonenumbers.NumberParseException;
+import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.perfectcherry.constant.RegistrationConstants;
 import com.perfectcherry.dto.InterestDTO;
 import com.perfectcherry.dto.ResetPasswordDTO;
@@ -29,8 +31,11 @@ public final class RegistrationUtility {
 
 	private static Logger logger = LogManager.getLogger(RegistrationUtility.class);
 
+	private static PhoneNumberUtil phoneNumberUtil = PhoneNumberUtil.getInstance();
+	
 	private RegistrationUtility() {
 	}
+	
 
 	private static final String EMAIL_REGEX = "^(.+)@(.+)$";
 
@@ -496,6 +501,13 @@ public final class RegistrationUtility {
 			logger.debug(String.format("Is resetPasswordDTO details valid : %s", isValid));
 		}
 		return isValid;
+	}
+	
+	public static boolean checkPhoneNumber(String region, String phoneNumber) throws NumberParseException {
+		if (logger.isDebugEnabled()) {
+			logger.debug(String.format("Check given phone number is valid or not: %s", phoneNumber));
+		}
+		return phoneNumberUtil.isValidNumber(phoneNumberUtil.parse(phoneNumber, region));
 	}
 
 }
