@@ -39,7 +39,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring().antMatchers("/user/create").antMatchers("/user/forgotPassword/**")
-				.antMatchers("/user/resetPassword").antMatchers("/").antMatchers("/css/**").antMatchers("/font/**")
+				.antMatchers("/user/resetPassword").antMatchers("/user/isPhoneRegistered/**").antMatchers("/").antMatchers("/css/**").antMatchers("/font/**")
 				.antMatchers("/fonts/**").antMatchers("/img/**").antMatchers("/js/**").antMatchers("/shop-cart/**");
 	}
 

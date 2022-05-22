@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.perfectcherry.dto.InterestDTO;
+import com.perfectcherry.dto.InterestOutBean;
 import com.perfectcherry.dto.ResponseDTO;
 import com.perfectcherry.entity.UserAccount;
 import com.perfectcherry.service.InterestService;
@@ -58,16 +59,25 @@ public class InterestController {
 
 	@GetMapping("interestSent/{userId}")
 	@PreAuthorize("hasRole('ROLE_USER')")
-	public List<UserAccount> interestSent(@PathVariable Long userId) {
+	public InterestOutBean interestSent(@PathVariable Long userId) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Inside interestSent method");
 		}
 		return interestService.interestSent(userId);
 	}
+	
+	@PatchMapping("cancelInterest/{interestID}")
+	@PreAuthorize("hasRole('ROLE_USER')")
+	public ResponseEntity<ResponseDTO> cancelInterest(@PathVariable Long interestID) {
+		if (logger.isDebugEnabled()) {
+			logger.debug("Inside declineInterest method");
+		}
+		return interestService.cancelInterest(interestID);
+	}
 
 	@GetMapping("interestReceived/{userId}")
 	@PreAuthorize("hasRole('ROLE_USER')")
-	public List<UserAccount> interestReceived(@PathVariable Long userId) {
+	public InterestOutBean interestReceived(@PathVariable Long userId) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Inside interestReceived method");
 		}

@@ -12,11 +12,11 @@ import com.perfectcherry.entity.Interest;
 @Repository
 public interface InterestRepository extends JpaRepository<Interest, Long>{
 	
-	@Query("SELECT interestedOn FROM Interest WHERE userId= ?1 AND status = 'Pending' ")
-	public List<Long> interestSent(Long userId);
+	@Query("FROM Interest WHERE userId= ?1 AND status in ('Pending','Declined') ")
+	public List<Interest> interestSent(Long userId);
 	
-	@Query("SELECT userId FROM Interest WHERE interestedOn= ?1 AND status = 'Pending' ")
-	public List<Long> interestReceived(Long userId);
+	@Query("FROM Interest WHERE interestedOn= ?1 AND status = 'Pending' ")
+	public List<Interest> interestReceived(Long userId);
 	
 	@Query("SELECT userId FROM Interest WHERE interestedOn= ?1 AND status = 'Accepted' ")
 	public List<Long> interestAcceptedByMe(Long userId);

@@ -159,7 +159,7 @@ public class PCEmailServiceImpl implements PCEmailService {
 		MailDTO mailDTO = getDefaultMailDTO();
 		mailDTO.setMailTo(interesteOnUserAccount.getEmailAddress());
 		mailDTO.setMailSubject(String.format(EmailConstants.INTEREST_SENT_SUBJECT, userAccount.getUserName()));
-		mailDTO.setMailContent(String.format("Yay..!!!%n%nYou got a new interest, login to %s to find out more.%s",
+		mailDTO.setMailContent(String.format("Yay..!!!%n%nYou got a new interest, login to %s to find out more.%n%n%s",
 				PerfectCherryConstants.PC_DOMAIN, EmailConstants.EMAIL_SIGNATURE));
 		return mailDTO;
 	}

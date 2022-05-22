@@ -16,6 +16,6 @@ public class EmailConstants {
 	
 	public static final String INTEREST_DECLINED_SUBJECT = "Perfect Cherry- %s has declined your interest";
 	
-	public static final String EMAIL_SIGNATURE = "%n%nThanks%%nwww.perfectcherry.com"; 
+	public static final String EMAIL_SIGNATURE = "Thanks %n www.perfectcherry.com"; 
 
 }

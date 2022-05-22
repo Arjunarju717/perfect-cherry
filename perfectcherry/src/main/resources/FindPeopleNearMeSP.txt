@@ -1,0 +1,33 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `FindPeopleNearMe`(
+    IN userid BIGINT(20),
+	IN latitude DECIMAL(10,8),
+    IN longitude DECIMAL(11,8),
+    IN withinRange INT(11)
+)
+BEGIN
+	SELECT * FROM (
+    SELECT *, 
+        (
+            (
+                (
+                    acos(
+                        sin(( latitude * pi() / 180))
+                        *
+                        sin(( `latitude` * pi() / 180)) + cos(( latitude * pi() /180 ))
+                        *
+                        cos(( `latitude` * pi() / 180)) * cos((( longitude - `longitude`) * pi()/180)))
+                ) * 180/pi()
+            ) * 60 * 1.1515 * 1.609344
+        )
+    as distance FROM `useraccount` where useraccount.useraccountid <> userid and useraccount.status='A' and useraccount.latitude is not null and useraccount.longitude is not null
+) useraccount 
+WHERE distance <= withinRange
+       AND NOT EXISTS (SELECT *
+                   FROM   interest i
+                   WHERE  i.userid = userid and i.interestedon = useraccount.useraccountid)
+       AND NOT EXISTS (SELECT *
+                   FROM   interest i
+                   WHERE  i.userid = useraccount.useraccountid and i.interestedon = userid);
+END$$
+DELIMITER ;

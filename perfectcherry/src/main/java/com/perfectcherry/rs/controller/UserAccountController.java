@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,7 +40,9 @@ public class UserAccountController {
 
 	@GetMapping("getAllUserData")
 	@PreAuthorize("hasRole('ROLE_USER')")
-	public UserAccount getAllUserData() {
+	public UserAccount getAllUserData(Authentication authentication) {
+		String arj = authentication.getName();
+		Object obj= authentication.getPrincipal();
 		if (logger.isDebugEnabled()) {
 			logger.debug("Inside getAllUserData method");
 		}

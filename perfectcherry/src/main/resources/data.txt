@@ -2,16 +2,16 @@
 INSERT INTO oauth_client_details (client_id, client_secret, web_server_redirect_uri, scope, access_token_validity, refresh_token_validity, resource_ids, authorized_grant_types, additional_information) VALUES ('mobile', '{bcrypt}$2a$10$vX8udb7PlKwOsnD0MXKmHO6UJwzl0Y3OHz5Ljl5dqC6K4.p.wNvZS', 'http://localhost:8080/code', 'READ,WRITE', '3600', '10000', 'inventory,payment', 'authorization_code,password,refresh_token,implicit', '{}');
 INSERT INTO oauth_client_details (client_id, client_secret, web_server_redirect_uri, scope, access_token_validity, refresh_token_validity, resource_ids, authorized_grant_types, additional_information) VALUES ('web', '{bcrypt}$2a$10$vX8udb7PlKwOsnD0MXKmHO6UJwzl0Y3OHz5Ljl5dqC6K4.p.wNvZS', 'http://localhost:8080/code', 'READ,WRITE', '3600', '10000', 'inventory,payment', 'authorization_code,password,refresh_token,implicit', '{}');
 
- INSERT INTO PERMISSION (NAME) VALUES
- ('create_profile'),
- ('read_profile'),
- ('update_profile'),
- ('delete_profile');
+ INSERT INTO permission VALUES
+ (1, 'create_profile'),
+ (2, 'read_profile'),
+ (3, 'update_profile'),
+ (4, 'delete_profile');
 
- INSERT INTO role (NAME) VALUES
-		('ROLE_admin'),('ROLE_user');
+ INSERT INTO role VALUES
+		(1, 'ROLE_ADMIN'),(2, 'ROLE_USER');
 
- INSERT INTO PERMISSION_ROLE (PERMISSION_ID, ROLE_ID) VALUES
+ INSERT INTO permission_role (PERMISSION_ID, ROLE_ID) VALUES
      (1,1), /*create-> admin */
      (2,1), /* read admin */
      (3,1), /* update admin */
@@ -21,7 +21,7 @@ INSERT INTO oauth_client_details (client_id, client_secret, web_server_redirect_
 insert into user (id, username,password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('1', 'arjunadmin','{bcrypt}$2a$10$iPW6q3X2kTZq.wYFHB578eR0uX5LkYTcO9v0yFG3nphkwP3ZB9dAG', '1', '1', '1', '1');
  insert into  user (id, username,password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('2', 'hemauser', '{bcrypt}$2a$10$Y8qgXgUPJ9PXptVz8HDvwuehgQ6pj1ULNYs7FXtdtT6cv4mMsfe7u', '1', '1', '1', '1');
 
-INSERT INTO ROLE_USER (ROLE_ID, USER_ID)
+INSERT INTO role_user (ROLE_ID, USER_ID)
     VALUES
     (1, 1) /* arjun-admin */,
     (2, 2) /* hema-user*/ ;

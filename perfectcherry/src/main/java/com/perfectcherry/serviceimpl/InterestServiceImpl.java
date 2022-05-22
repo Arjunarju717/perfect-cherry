@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,12 +16,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.perfectcherry.constant.InterestConstants;
 import com.perfectcherry.constant.RegistrationConstants;
+import com.perfectcherry.dto.InterestBean;
 import com.perfectcherry.dto.InterestDTO;
+import com.perfectcherry.dto.InterestOutBean;
 import com.perfectcherry.dto.ResponseDTO;
 import com.perfectcherry.entity.Interest;
 import com.perfectcherry.entity.UserAccount;
 import com.perfectcherry.pcenum.InterestEnum;
-import com.perfectcherry.pcenum.ProfilePhoto;
 import com.perfectcherry.repository.InterestRepository;
 import com.perfectcherry.repository.UserAccountRepository;
 import com.perfectcherry.service.InterestService;
@@ -40,7 +40,7 @@ public class InterestServiceImpl implements InterestService {
 
 	@Autowired
 	private UserAccountRepository userAccountRepository;
-	
+
 	@Autowired
 	private PCEmailService pcEmailService;
 
@@ -55,7 +55,8 @@ public class InterestServiceImpl implements InterestService {
 				&& !isInterestAlreadySent(interestDTO)) {
 			Interest interest = fillInterestDetails(interestDTO);
 			interestRepository.save(interest);
-			pcEmailService.sendInterestMail(interestDTO.getUserId(), interestDTO.getInterestedOn(), InterestConstants.NEW);
+			pcEmailService.sendInterestMail(interestDTO.getUserId(), interestDTO.getInterestedOn(),
+					InterestConstants.NEW);
 			if (logger.isDebugEnabled()) {
 				logger.debug(String.format("Interest Sent : %s", interestDTO.toString()));
 			}
@@ -82,7 +83,8 @@ public class InterestServiceImpl implements InterestService {
 			if (interestOptional.isPresent()) {
 				Interest interest = fillInterestEntity(interestOptional.get(), InterestEnum.A.toString());
 				interestRepository.save(interest);
-				pcEmailService.sendInterestMail(interest.getUserId(), interest.getInterestedOn(), InterestConstants.ACCEPT);
+				pcEmailService.sendInterestMail(interest.getUserId(), interest.getInterestedOn(),
+						InterestConstants.ACCEPT);
 				if (logger.isDebugEnabled()) {
 					logger.debug(String.format("Interest accepted : %s", interestID));
 				}
@@ -115,7 +117,8 @@ public class InterestServiceImpl implements InterestService {
 			if (interestOptional.isPresent()) {
 				Interest interest = fillInterestEntity(interestOptional.get(), InterestEnum.D.toString());
 				interestRepository.save(interest);
-				pcEmailService.sendInterestMail(interest.getUserId(), interest.getInterestedOn(), InterestConstants.DECLINE);
+				pcEmailService.sendInterestMail(interest.getUserId(), interest.getInterestedOn(),
+						InterestConstants.DECLINE);
 				if (logger.isDebugEnabled()) {
 					logger.debug(String.format("Interest Declined : %s", interestID));
 				}
@@ -137,27 +140,63 @@ public class InterestServiceImpl implements InterestService {
 	}
 
 	@Override
-	public List<UserAccount> interestSent(Long userId) {
+	@Modifying
+	@Transactional
+	public ResponseEntity<ResponseDTO> cancelInterest(Long interestID) {
 		if (logger.isDebugEnabled()) {
-			logger.debug(String.format("Interests sent by userID : %s", userId));
+			logger.debug(String.format("Cancel interest with interest ID : %s", interestID));
 		}
-		List<Long> userIds = interestRepository.interestSent(userId);
-		return userAccountRepository.findAllById(userIds);
+		if (null != interestID && interestID > 0) {
+			Optional<Interest> interestOptional = interestRepository.findById(interestID);
+			if (interestOptional.isPresent()) {
+				interestRepository.deleteById(interestID);
+				if (logger.isDebugEnabled()) {
+					logger.debug(String.format("Interest canceled : %s", interestID));
+				}
+				return RegistrationUtility.fillResponseEntity(RegistrationConstants.INTEREST_CANCLED, HttpStatus.OK);
+			} else {
+				if (logger.isDebugEnabled()) {
+					logger.debug(String.format("Interest not found : %s", interestID));
+				}
+				return RegistrationUtility.fillResponseEntity(RegistrationConstants.INTEREST_NOT_FOUND,
+						HttpStatus.BAD_REQUEST);
+			}
+
+		} else {
+			if (logger.isDebugEnabled()) {
+				logger.debug(String.format("Invalid interest id : %s", interestID));
+			}
+			return RegistrationUtility.fillResponseEntity(RegistrationConstants.INVALID_INTEREST_ID_MESSAGE,
+					HttpStatus.BAD_REQUEST);
+		}
 	}
 
 	@Override
-	public List<UserAccount> interestReceived(Long userId) {
+	public InterestOutBean interestSent(Long userId) {
+		if (logger.isDebugEnabled()) {
+			logger.debug(String.format("Interests sent by userID : %s", userId));
+		}
+		InterestOutBean interestOutBean = new InterestOutBean();
+		List<InterestBean> interests = new ArrayList<>();
+		List<Interest> interestList = interestRepository.interestSent(userId);
+		interestList.forEach(interest -> interests
+				.add(new InterestBean(interest, userAccountRepository.findById(interest.getInterestedOn()).get())));
+		interestOutBean.setInterests(interests);
+		return interestOutBean;
+	}
+
+	@Override
+	public InterestOutBean interestReceived(Long userId) {
 		if (logger.isDebugEnabled()) {
 			logger.debug(String.format("Interests received by userID : %s", userId));
 		}
-		List<Long> userIds = interestRepository.interestReceived(userId);
-		List<UserAccount> userList = new ArrayList<>();
-		for (UserAccount user : userAccountRepository.findAllById(userIds)) {
-			user.setImage(user.getImage().stream().filter(s -> s.getIsProfilePhoto() == ProfilePhoto.Y.asChar())
-					.collect(Collectors.toList()));
-			userList.add(user);
-		}
-		return userList;
+		InterestOutBean interestOutBean = new InterestOutBean();
+		List<InterestBean> interests = new ArrayList<>();
+		List<Interest> interestList = interestRepository.interestReceived(userId);
+		interestList.forEach(interest -> interests
+				.add(new InterestBean(interest, userAccountRepository.findById(interest.getUserId()).get())));
+		interestOutBean.setInterests(interests);
+		return interestOutBean;
 	}
 
 	@Override

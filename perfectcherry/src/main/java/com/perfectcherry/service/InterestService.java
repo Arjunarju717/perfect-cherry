@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 
 import com.perfectcherry.dto.InterestDTO;
+import com.perfectcherry.dto.InterestOutBean;
 import com.perfectcherry.dto.ResponseDTO;
 import com.perfectcherry.entity.UserAccount;
 
@@ -16,9 +17,11 @@ public interface InterestService {
 
 	public ResponseEntity<ResponseDTO> declineInterest(Long interestID);
 	
-	public List<UserAccount> interestSent(Long userId);
+	public ResponseEntity<ResponseDTO> cancelInterest(Long interestID);
+	
+	public InterestOutBean interestSent(Long userId);
 
-	public List<UserAccount> interestReceived(Long userId);
+	public InterestOutBean interestReceived(Long userId);
 	
 	public List<UserAccount> interestAcceptedByMe(Long userId);
 	
@@ -27,5 +30,6 @@ public interface InterestService {
 	public List<UserAccount> interestDeclinedByMe(Long userId);
 	
 	public List<UserAccount> interestDeclinedByThem(Long userId);
+
 	
 }

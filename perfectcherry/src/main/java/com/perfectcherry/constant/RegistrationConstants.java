@@ -108,6 +108,8 @@ public final class RegistrationConstants {
 	public static final String INTEREST_ACCEPTED = "Interest accepted";
 
 	public static final String INTEREST_DECLINED = "Interest declined";
+	
+	public static final String INTEREST_CANCLED = "Interest Cancled";
 
 	public static final String INTEREST_NOT_FOUND = "Interest not found";
 
